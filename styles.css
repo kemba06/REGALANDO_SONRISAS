@@ -1,0 +1,171 @@
+/* Fuente y fondo general */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Fondo navideño */
+.background-overlay {
+    background: url('https://images.unsplash.com/photo-1543589077-47d81606c1bf?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat fixed;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    filter: brightness(0.8);
+}
+
+/* ❄️ Copos de nieve animados */
+.snow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: 
+        radial-gradient(white 2px, transparent 2px),
+        radial-gradient(white 3px, transparent 3px),
+        radial-gradient(white 1.5px, transparent 1.5px);
+    background-size: 10px 10px, 15px 15px, 20px 20px;
+    animation: snowFall 15s linear infinite;
+    z-index: -1;
+    opacity: 0.8;
+}
+
+@keyframes snowFall {
+    from { background-position: 0 0, 0 0, 0 0; }
+    to { background-position: 0 1000px, 0 800px, 0 600px; }
+}
+
+/* Encabezado con luces */
+header {
+    background: rgba(179, 0, 0, 0.85);
+    text-align: center;
+    color: white;
+    padding: 50px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de luces navideñas */
+.lights {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.lights span {
+    width: 15px;
+    height: 15px;
+    margin: 4px;
+    border-radius: 50%;
+    animation: blink 1.5s infinite;
+}
+
+.lights span:nth-child(1) { background: red; animation-delay: 0.1s; }
+.lights span:nth-child(2) { background: gold; animation-delay: 0.3s; }
+.lights span:nth-child(3) { background: green; animation-delay: 0.5s; }
+.lights span:nth-child(4) { background: red; animation-delay: 0.7s; }
+.lights span:nth-child(5) { background: gold; animation-delay: 0.9s; }
+.lights span:nth-child(6) { background: green; animation-delay: 1.1s; }
+.lights span:nth-child(7) { background: red; animation-delay: 1.3s; }
+.lights span:nth-child(8) { background: gold; animation-delay: 1.5s; }
+.lights span:nth-child(9) { background: green; animation-delay: 1.7s; }
+.lights span:nth-child(10) { background: red; animation-delay: 1.9s; }
+
+@keyframes blink {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.3; transform: scale(0.9); }
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+}
+
+header p {
+    font-style: italic;
+}
+
+/* Secciones */
+main section {
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 40px auto;
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 6px solid #e63946;
+    max-width: 900px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+h2 {
+    color: #b30000;
+    margin-top: 0;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li::before {
+    content: "🎄 ";
+}
+
+/* Pie de página */
+footer {
+    background: rgba(179, 0, 0, 0.9);
+    color: white;
+    text-align: center;
+    padding: 25px;
+    font-style: italic;
+}
+
+footer blockquote {
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    header h1 { font-size: 2em; }
+    main section { margin: 20px; padding: 15px; }
+}
+
+/* 🌟 BOTÓN DE DONACIÓN */
+.donate-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff0000, #e63946);
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-size: 1.2em;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.donate-btn:hover {
+    background: linear-gradient(135deg, #ffd700, #ff7b00);
+    color: #900;
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+/* Efecto de pulso suave */
+@keyframes pulse {
+    0% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.6); }
+    50% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.9); }
+    100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.6); }
+}
